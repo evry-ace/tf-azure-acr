@@ -18,3 +18,7 @@ variable "resource_group_location" {
 variable "registry_name" {
   description = "A name for the registry"
 }
+
+variable "sku" {
+  default = "Basic"
+}

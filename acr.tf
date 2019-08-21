@@ -1,18 +1,9 @@
-resource "azurerm_storage_account" "registry" {
-  name                     = "${var.registry_name}"
-  resource_group_name      = "${var.resource_group_name}"
-  location                 = "${var.resource_group_location}"
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
-}
-
 resource "azurerm_container_registry" "registry" {
   name                = "${var.registry_name}"
   resource_group_name = "${var.resource_group_name}"
   location            = "${var.resource_group_location}"
   admin_enabled       = true
   sku                 = "${var.sku}"
-  storage_account_id  = "${azurerm_storage_account.registry.id}"
 }
 
 output "registry_url" {

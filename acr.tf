@@ -30,6 +30,10 @@ output "registry_pass" {
   sensitive = true
 }
 
+output "registry_id" {
+  value = azurerm_container_registry.registry.id
+}
+
 output "registry_configure" {
   value = <<CONFIGURE
 

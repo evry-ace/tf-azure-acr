@@ -1,9 +1,9 @@
 resource "azurerm_container_registry" "registry" {
-  name                = "var.registry_name"
-  resource_group_name = "var.resource_group_name"
-  location            = "var.resource_group_location"
+  name                = var.registry_name
+  resource_group_name = var.resource_group_name
+  location            = var.resource_group_location
   admin_enabled       = true
-  sku                 = "var.sku"
+  sku                 = var.sku
 }
 
 output "registry_url" {

@@ -22,3 +22,7 @@ variable "registry_name" {
 variable "sku" {
   default = "Basic"
 }
+
+variable "tags" {
+  default = {}
+}

@@ -4,6 +4,7 @@ resource "azurerm_container_registry" "registry" {
   location            = var.resource_group_location
   admin_enabled       = true
   sku                 = var.sku
+  tags                = var.tags
 }
 
 output "registry_url" {

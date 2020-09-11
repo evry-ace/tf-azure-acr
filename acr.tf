@@ -1,23 +1,23 @@
 resource "azurerm_container_registry" "registry" {
-  name                = "${var.registry_name}"
-  resource_group_name = "${var.resource_group_name}"
-  location            = "${var.resource_group_location}"
+  name                = var.registry_name
+  resource_group_name = var.resource_group_name
+  location            = var.resource_group_location
   admin_enabled       = true
-  sku                 = "${var.sku}"
+  sku                 = var.sku
 }
 
 output "registry_url" {
-  value     = "${azurerm_container_registry.registry.login_server}"
+  value     = azurerm_container_registry.registry.login_server
   sensitive = true
 }
 
 output "registry_user" {
-  value     = "${azurerm_container_registry.registry.admin_username}"
+  value     = azurerm_container_registry.registry.admin_username
   sensitive = true
 }
 
 output "registry_pass" {
-  value     = "${azurerm_container_registry.registry.admin_password}"
+  value     = azurerm_container_registry.registry.admin_password
   sensitive = true
 }
 
